@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<ruleset name="WP-Inspector">
+  <description>PHP Compatibility Checks</description>
+
+  <config name="installed_paths" value="vendor/phpcompatibility/php-compatibility" />
+
+  <!-- Test for PHP 7.0+ -->
+  <config name="testVersion" value="7.0-"/>
+
+  <rule ref="PHPCompatibility" />
+
+  <!-- Don't get upset about files we can't look at. -->
+  <rule ref="Internal.Tokenizer.Exception">
+    <severity>0</severity>
+  </rule>
+</ruleset>

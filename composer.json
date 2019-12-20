@@ -1,0 +1,31 @@
+{
+    "name": "stevegrunwell/php-compatibility",
+    "description": "Test a package's compatibility with different versions of PHP.",
+    "type": "wordpress-mu-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Steve Grunwell",
+            "homepage": "https://stevegrunwell.com"
+        }
+    ],
+    "require": {
+        "phpcompatibility/php-compatibility": "^9.0"
+    },
+    "scripts": {
+        "docker:build": [
+            "@composer install --no-dev",
+            "docker build -t stevegrunwell/php-compatibility ."
+        ]
+    },
+    "scripts-descriptions": {
+        "docker:build": "Build the Docker container"
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    }
+}
+
+
