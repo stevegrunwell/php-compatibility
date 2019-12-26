@@ -8,10 +8,12 @@ The container has one goal: to download an archive of a package, safely extract 
 
 ```sh
 # Check against the Akismet WordPress plugin.
-$ docker run --rm -it https://downloads.wordpress.org/plugin/akismet.4.1.3.zip
+$ docker run --rm -it stevegrunwell/php-compatibility \
+  https://downloads.wordpress.org/plugin/akismet.4.1.3.zip
 
 # Verify that a package doesn't have issues with PHP 7.4
-$ docker run --rm -it https://example.com/some-package.zip --php=7.4
+$ docker run --rm -it stevegrunwell/php-compatibility \
+  https://example.com/some-package.zip --php=7.4
 ```
 
 ### Specifying the PHP version
