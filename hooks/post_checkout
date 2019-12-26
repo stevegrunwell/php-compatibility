@@ -2,11 +2,9 @@
 
 set -ex
 
-# Verify that Composer is available; if not, install it.
-if ! [ -x "$(command -v composer)" ]; then
-  curl -o composer https://getcomposer.org/download/1.9.1/composer.phar
-  chmod +x composer
-fi
+# Download Composer as a PHAR file.
+curl -o composer.phar https://getcomposer.org/download/1.9.1/composer.phar
+chmod +x ./composer.phar
 
-# Install Composer dependencies
-composer install --no-dev --no-interaction
+# Install Composer dependencies.
+./composer.phar install --no-dev --no-interaction
