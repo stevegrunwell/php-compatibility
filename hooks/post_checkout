@@ -3,4 +3,5 @@
 set -ex
 
 docker run --rm \
+  --volume $PWD:/app \
   composer install --no-dev --no-interaction
