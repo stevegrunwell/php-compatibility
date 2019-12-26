@@ -1,8 +1,12 @@
 #!/bin/bash
 
-# Download Composer as a PHAR
-wget https://getcomposer.org/download/1.9.1/composer.phar
-chmod +x composer.phar
+set -ex
+
+# Verify that Composer is available; if not, install it.
+if ! [ -x "$(command -v composer)" ]; then
+  curl -o composer https://getcomposer.org/download/1.9.1/composer.phar
+  chmod +x composer
+fi
 
 # Install Composer dependencies
-composer.phar install --no-dev --no-interaction
+composer install --no-dev --no-interaction
