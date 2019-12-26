@@ -1,7 +1,7 @@
 FROM php:7-alpine
 
 RUN set -eux; \
-  apk add --no-cache --virtual \
+  apk add --no-cache \
   bash \
   unzip
 
